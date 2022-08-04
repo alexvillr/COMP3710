@@ -16,4 +16,4 @@ def divide(interval, level=0):
     segments = np.linspace(interval[0], interval[1], num_points)
 
 divide(unit_interval)
-plt.show
+plt.show()
