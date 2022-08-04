@@ -21,8 +21,38 @@ start = 0.1 + 0.5j
 
 plt.plot(np.real(circle_points), np.imag(circle_points), "b-")
 plt.plot(np.real(points), np.imag(points), "r.")
-plt.plot(np.real(start), np.imag(start), "g.")
 
+#play the game
+select = np.random.randint(0, n)
+print(points[select])
+
+#new point
+new_point = points[select] - start
+new_point += start
+
+#plot it
+
+#full algorithm
+def compute(startloc):
+    '''
+    compute new position for game
+    '''
+    randloc = np.random.randint(0, n)
+    new_point = points[randloc] - startloc
+    new_point = startloc + new_point / 2
+    return new_point, points[randloc]
+
+pl, rloc = compute(start)
+
+# plt.plot(np.real(circle_points), np.imag(circle_points), "b-")
+# plt.plot(np.real(points), np.imag(points), "r.")
+# plt.plot(np.real(start), np.imag(start), "g.")
+iterations = 1000
+
+next_point = start
+for i in range(iterations):
+    next_point, rloc = compute(next_point)
+    plt.plot(np.real(next_point), np.imag(next_point), "b.")
 
 
 plt.show()
