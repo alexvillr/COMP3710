@@ -4,7 +4,7 @@ Script for generating cantor set
 import numpy as np
 import matplotlib.pylab as plt
 
-depth = 40
+depth = 6
 unit_interval = [0,1]
 num_points = 4
 
