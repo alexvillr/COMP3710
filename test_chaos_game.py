@@ -5,7 +5,7 @@ from xmlrpc.client import MAXINT
 import numpy as np
 import matplotlib.pylab as plt
 
-n = 4
+n = 7
 
 #generate n points on a unit circle
 r = np.arange(0, n)
@@ -21,7 +21,7 @@ circle_points = np.exp(2.0 * np.pi * 1j * w / res)
 start = 0.1 + 0.5j
 
 # plt.plot(np.real(circle_points), np.imag(circle_points), "b-")
-# plt.plot(np.real(points), np.imag(points), "r.")
+plt.plot(np.real(points), np.imag(points), "r.")
 
 #play the game
 select = np.random.randint(0, n)
@@ -50,7 +50,7 @@ pl, rloc = compute(start)
 # plt.plot(np.real(circle_points), np.imag(circle_points), "b-")
 # plt.plot(np.real(points), np.imag(points), "r.")
 # plt.plot(np.real(start), np.imag(start), "g.")
-iterations = 100000
+iterations = 10000
 
 next_point = start
 for i in range(iterations):
